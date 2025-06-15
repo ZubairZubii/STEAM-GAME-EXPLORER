@@ -1,0 +1,367 @@
+/* Header styling */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 4rem; /* Further increased horizontal padding for a wider feel */
+  background: linear-gradient(135deg, #161a25 0%, #1f2735 100%);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.5); /* Stronger, deeper shadow */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(12px); /* Increased blur */
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12); /* Slightly more visible border */
+  flex-wrap: nowrap;
+  max-width: 100vw;
+}
+
+.header.expanded {
+  height: auto; /* Expands when genre filter is open or a genre is selected */
+}
+
+/* Logo styling */
+.logo-link {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem; /* Slightly more gap */
+  font-size: 2.1rem; /* Larger logo font */
+  font-weight: 800; /* Bolder logo */
+  background: linear-gradient(45deg, #b0bec5, #cfd8dc); /* Even softer, more metallic gradient */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: transform 0.25s ease-in-out;
+}
+
+.logo-link:hover {
+  transform: translateY(-3px);
+}
+
+.logo {
+  font-size: 2.1rem;
+  font-weight: bold;
+}
+
+/* Search bar styling */
+.search-bar-container {
+  flex: 1;
+  max-width: 600px; /* Slightly wider search bar */
+  margin: 0 2.5rem; /* Increased margin */
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1); /* Slightly more opaque background */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* More visible border */
+  border-radius: 45px; /* More rounded */
+  padding: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.search-bar:focus-within {
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.15); /* Stronger focus shadow */
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.search-bar input {
+  flex: 1;
+  padding: 0.8rem 1.6rem; /* Increased padding */
+  border: none;
+  background: transparent;
+  color: #e0e0e0;
+  font-size: 1rem;
+  outline: none;
+}
+
+.search-bar input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.search-button {
+  padding: 0.8rem 1.6rem;
+  background: linear-gradient(45deg, #4a90e2, #2e78d2); /* More vibrant blue */
+  border: none;
+  border-radius: 45px;
+  color: white;
+  cursor: pointer;
+  font-weight: 600; /* Bolder text */
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.search-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(74, 144, 226, 0.5);
+  background: linear-gradient(45deg, #2e78d2, #4a90e2);
+}
+
+/* Filter button styling */
+.filter-button {
+  padding: 0.8rem 1.6rem;
+  background: linear-gradient(45deg, #4a90e2, #2e78d2);
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-left: 0.5rem;
+  border: none;
+  border-radius: 45px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.filter-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(74, 144, 226, 0.5);
+  background: linear-gradient(45deg, #2e78d2, #4a90e2);
+}
+
+/* Main Navigation Styles */
+.main-nav {
+  margin-left: auto;
+}
+
+.nav-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 2.8rem; /* Significantly increased gap for wider menu */
+  width: auto;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #c9d6de;
+  font-size: 1.15rem; /* Larger font for menu items */
+  font-weight: 500;
+  padding: 0.8rem 1.5rem; /* Larger clickable area */
+  transition: all 0.3s ease;
+  border-radius: 10px; /* More rounded corners */
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.nav-links a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(96, 165, 250, 0.2); /* More visible background on hover */
+  transition: transform 0.3s ease;
+  transform: scaleX(0);
+  transform-origin: left;
+  z-index: -1;
+}
+
+.nav-links a:hover::before {
+  transform: scaleX(1);
+}
+
+.nav-links a:hover {
+  color: #8bbaf7; /* Lighter blue on hover */
+  transform: translateY(-3px);
+}
+
+/* Logout button */
+.logout-button {
+  padding: 0.8rem 1.5rem; /* Larger padding */
+  background: #ff4d4d;
+  color: white;
+  border: none;
+  border-radius: 10px; /* More rounded */
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-left: 2rem; /* Increased space from other nav items */
+}
+
+.logout-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(255, 77, 77, 0.5);
+  background: #e03c3c;
+}
+
+/* Footer styling */
+.footer {
+  background: linear-gradient(135deg, #161a25 0%, #1f2735 100%);
+  color: #e0e0e0;
+  padding: 3rem 2rem; /* More padding */
+  text-align: center;
+  margin-top: auto;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-content {
+  max-width: 1200px; /* Wider content */
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Larger min-width for columns */
+  gap: 2rem; /* Increased gap */
+  text-align: left;
+}
+
+.footer-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; /* More gap */
+}
+
+.footer-section h3 {
+  color: #8bbaf7; /* Lighter, more prominent blue */
+  font-size: 1.5rem; /* Larger font */
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.footer-section p {
+  color: rgba(255, 255, 255, 0.7); /* Slightly lighter text */
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+.footer-section a {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  transition: color 0.2s ease;
+  font-size: 1rem;
+}
+
+.footer-section a:hover {
+  color: #8bbaf7;
+}
+
+.footer-bottom {
+  margin-top: 2rem; /* More margin */
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.9rem;
+}
+
+/* Responsive Design for Navbar */
+@media (max-width: 1200px) {
+  .header {
+    padding: 1.2rem 2.5rem;
+  }
+
+  .search-bar-container {
+    max-width: 500px;
+    margin: 0 1.5rem;
+  }
+
+  .nav-links {
+    gap: 1.8rem;
+  }
+
+  .nav-links a {
+    font-size: 1rem;
+    padding: 0.7rem 1.2rem;
+  }
+
+  .logout-button {
+    margin-left: 1.5rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+
+  .search-bar-container {
+    width: 100%;
+    margin: 1rem 0;
+  }
+
+  .main-nav {
+    margin-left: 0;
+    margin-top: 1rem;
+    width: 100%;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 0.8rem;
+    width: 100%;
+  }
+
+  .nav-links li {
+    width: 100%;
+  }
+
+  .nav-links a {
+    padding: 0.8rem 1rem;
+    text-align: center;
+    width: 100%;
+  }
+
+  .logout-button {
+    margin-top: 0.8rem;
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 0.8rem 1rem;
+  }
+
+  .logo-link {
+    font-size: 1.8rem; /* Slightly larger on smaller screens */
+  }
+
+  .search-bar input,
+  .search-button,
+  .filter-button {
+    font-size: 0.85rem;
+    padding: 0.6rem 1rem;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .footer-section h3 {
+    font-size: 1.4rem; /* Larger on smaller screens */
+  }
+
+  .footer-section p,
+  .footer-section a {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 0.6rem 0.8rem;
+  }
+
+  .logo-link {
+    font-size: 1.6rem;
+  }
+}
