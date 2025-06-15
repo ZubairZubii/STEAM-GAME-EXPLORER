@@ -3,6 +3,9 @@
 ## Project Description
 
 The Steam Game Explorer is a React-based web application designed to provide users with a modern and intuitive platform to explore, discover, and compare PC games available on Steam. It offers a rich user interface, a robust backend for managing game data, and features to enhance the game discovery experience.
+![localhost_3000_gamecomparison](https://github.com/user-attachments/assets/ba5d71a4-528f-4852-bc84-1d4aef9193d2)
+![Untitled design (4)](https://github.com/user-attachments/assets/ece950fa-4822-4780-b55c-0304ba06801d)
+
 
 ## Features
 
